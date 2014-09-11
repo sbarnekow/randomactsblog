@@ -2,20 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+header {
+	font-family: 'Ubuntu Mono';
+	font-size: 5em;
+	text-align: center;
+	padding: 10px;
+}
 
-/*div.container {
+nav {
+	font-family: 'Ubuntu Mono';
+	font-size: 2em;
+	text-align: center;
+	padding: 10px;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: gray;
+}
+
+div.container {
 	@include outer-container;
-
-	div.parent-element {
-		@include span-columns(8);
-
-		div.element {
-			@include span-columns(6 of 8);
-		}
-	}
 }
 
-div.element {
-	@include span-columns(6)
+section.post-container {
+	@include span-columns(6);
+	@include shift(3);
 }
-*/

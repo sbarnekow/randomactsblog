@@ -1,24 +1,21 @@
-<h1>Random Acts of Code</h1>
-<%= link_to 'Random Acts of Code', controller: 'posts' %> 
-<%= link_to 'Write a New Post', new_post_path %>
-<table> 
-	<tr>
-		<th>Title</th>
-		<th>Text</th>
-	</tr>
-	
-	<% @posts.each do |post| %> 
-	<tr> 
-		<td><%= post.title %></td>
-		<td><%= post.text %></td>
-		<td><%= link_to 'Show', post_path(post) %></td>
-		<td><%= link_to 'Edit', edit_post_path(post) %></td>
-		<td><%= link_to 'Delete', post_path(post),
-								  method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %></td>
-	</tr>
-	<p>
-	<p>
-	<% end %>
-
-</table>
-
+<header>
+	Random Acts of Code
+</header>
+<nav>
+	<%= link_to 'Random Acts of Code', controller: 'posts' %> | 
+	<%= link_to 'Write a New Post', new_post_path %>
+</nav>
+<div class="container">
+		<% @posts.each do |post| %> 
+		<section class="post-container">
+			<%= post.title %>
+			<p>
+			<%= post.text %>
+			<p>
+			<%= link_to 'Show', post_path(post) %> | 
+			<%= link_to 'Edit', edit_post_path(post) %> |
+			<%= link_to 'Delete', post_path(post),
+									  method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
+		</section>
+		<% end %>
+</div>
