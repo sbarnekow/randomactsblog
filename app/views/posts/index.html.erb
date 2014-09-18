@@ -1,14 +1,7 @@
-<header>
-	Random Acts of Code
-</header>
-<nav>
-	<%= link_to 'Random Acts of Code', controller: 'posts' %> | 
-	<%= link_to 'Write a New Post', new_post_path %>
-</nav>
 <div class="container">
 		<% @posts.each do |post| %> 
 		<section class="post-container">
-			<%= post.title %>
+			<%= link_to(post.title, post)  %>
 			<p>
 			<%= post.text %>
 			<p>

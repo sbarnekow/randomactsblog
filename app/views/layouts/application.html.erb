@@ -9,8 +9,15 @@
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-<%= yield %>
+	<header>
+		Random Acts of Code
+	</header>
+	<nav>
+		<%= link_to 'Random Acts of Code', controller: 'posts' %> | 
+		<%= link_to 'Write a New Post', new_post_path %>
+	</nav>
+	
+	<%= yield %>
 
 </body>
 </html>

@@ -37,4 +37,7 @@ div.container {
 section.post-container {
 	@include span-columns(6);
 	@include shift(3);
+	font-family: 'Raleway';
+	border: 1px solid black;
+	padding: 10px;
 }
