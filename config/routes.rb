@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
+  get '/log-in' => "sessions#new" 
+  post '/log-in' => "sessions#create", as: :login
+  get '/log-out' => "sessions#destroy", as: :logout
+
   # Example resource route with options:
   #   resources :products do
   #     member do
