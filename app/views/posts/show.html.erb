@@ -12,5 +12,7 @@
 		<%= @post.created_at %>
 	</p>
 	<%= link_to 'Back', posts_path %>
-	| <%= link_to 'Edit', edit_post_path(@post) %>
+	<% if current_user && current_user.admin == true %> 
+	| <%=  link_to 'Edit', edit_post_path(@post) %>
+	<% end %>
 </section>

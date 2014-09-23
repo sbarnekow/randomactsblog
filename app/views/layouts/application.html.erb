@@ -11,6 +11,8 @@
 <body>
 	<header>
 		<%= link_to 'Random Acts of Code', root_path %>
+		<%= current_user.email %>
+		<%= current_user.admin %>
 	</header>
 	<% if current_user %>
 		<nav>

@@ -8,4 +8,22 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+
+  protected 
+
+  def authenticate_user! 
+  	if current_user
+  		super
+  	else 
+  		redirect_to login_path, :notice => "You need to be logged in to perform that action."
+  	end
+  end
+
+  def check_if_admin
+  	if current_user
+  		flash[:notice] = "You are not an admin user." unless current_user.admin?
+  	else 
+  		flash[:notice] = "Please sign in."
+  	end
+  end
 end
