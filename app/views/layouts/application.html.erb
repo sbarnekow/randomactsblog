@@ -10,14 +10,16 @@
 </head>
 <body>
 	<header>
-		Random Acts of Code
+		<%= link_to 'Random Acts of Code', root_path %>
 	</header>
-	<nav>
-		<%= link_to 'Random Acts of Code', controller: 'posts' %> | 
-		<%= link_to 'Write a New Post', new_post_path %> |
-		<%= link_to 'Log In', login_path %> | 
-		<%= link_to 'Log Out', logout_path %>
-	</nav>
+	<% if current_user %>
+		<nav>
+		
+			<%= link_to 'Write a New Post', new_post_path %> |
+			<%= link_to 'Log In', login_path %> | 
+			<%= link_to 'Log Out', logout_path %>
+		</nav>
+	<% end %>
 	<div class="notice">
 		<%= flash[:notice] %>
 	</div>
