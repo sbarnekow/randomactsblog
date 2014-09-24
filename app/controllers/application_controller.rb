@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
   protected 
 
   def authenticate_user! 
-  	if current_user.admin == true
+  	if current_user && current_user.admin == true
   	else 
-  		redirect_to login_path, :notice => "You need to be logged in to perform that action."
+  		redirect_to root_path, :notice => "Sorry, you do not have permission to perform that action."
   	end
   end
 
