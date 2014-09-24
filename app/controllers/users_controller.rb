@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
+
+
+	def index
+		@user = User.all 
+	end
+
 	def new
-		
 	end
 
 	def create 
@@ -13,16 +18,27 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def admin? 
-		if current_user.admin == true
-			return true
-		else
-			return false
+	def edit 
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+
+		if @user.update(user_params)
+			redirect_to users
+		else 
+			render 'edit'
+			flash[:notice] = "Something went wrong."
 		end
+	end
+
+	def show 
+		@user = User.find(params[:id])
 	end
 
 	private
 	def user_params
-		params.require(:user).permit(:email, :password, :password_confirmation)
+		params.require(:user).permit(:email, :password, :password_confirmation, :admin)
 	end
 end

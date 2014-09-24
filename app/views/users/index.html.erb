@@ -1,0 +1,9 @@
+<% @user.each do |user| %>
+<div>
+	<span> <%= link_to "#{user.email}", user %> </span>
+	<span> <%= user.admin %> </span>
+	<% if current_user && current_user.admin == true %>
+	<span> <%= @user.checkbox :admin %> </span> 
+	<% end %>
+</div>
+<% end %> 

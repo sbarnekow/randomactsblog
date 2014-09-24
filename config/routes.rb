@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
+  get '/sign-up' => 'users#new', as: :sign_up
   get '/log-in' => "sessions#new" 
   post '/log-in' => "sessions#create", as: :login
   get '/log-out' => "sessions#destroy", as: :logout
