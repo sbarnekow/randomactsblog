@@ -1,0 +1,28 @@
+<section class="post-container">
+	<h1>Edit This User</h1>
+
+	<%= form_for @user do |f| %>
+		
+		<div>
+			<%=f.label :email %>
+			<%=f.text_field :email %>
+		</div>
+		<div>
+			<%=f.label :password %>
+			<%=f.password_field :password %>
+		</div>
+		<div>
+			<%=f.label :password_confirmation %>
+			<%=f.password_field :password_confirmation %>
+		</div>
+		<div>
+			<%= f.label :admin %>
+			<%= f.check_box :admin %>
+		</div>
+		
+		<%=f.submit "Update" %>
+
+	<%end%>
+
+	<%= link_to 'Back', users_path %>
+</section>

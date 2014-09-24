@@ -1,23 +1,11 @@
 <section class="post-container">
-	<h1>Sign Up</h1>
-	<%= form_for User.new do |f| %>
-	<div>
-		<%=f.label :email %>
-		<%=f.text_field :email %>
-	</div>
-	<div>
-		<%=f.label :password %>
-		<%=f.password_field :password %>
-	</div>
-	<div>
-		<%=f.label :password_confirmation %>
-		<%=f.password_field :password_confirmation %>
-	</div>
+	<h1> Create a New User </h1>
 
-	<div>
-		<%=f.label :admin %>
-		<%=f.check_box :admin %>
-	</div>
+	<%= render 'form' %>
+
 	<%=f.submit "Sign Up" %>
+
 	<%end%>
+	<% link_to 'Back', root_path %>
+
 </section>

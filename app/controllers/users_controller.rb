@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
-
-
 	def index
 		@user = User.all 
 	end
 
 	def new
+		@user = User.new
 	end
 
 	def create 
@@ -26,7 +25,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 
 		if @user.update(user_params)
-			redirect_to users
+			redirect_to users_path
 		else 
 			render 'edit'
 			flash[:notice] = "Something went wrong."
