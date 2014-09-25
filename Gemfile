@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use sqlite3 as the database for Active Record
-
+gem 'pg'
 
 group :assets do 
 	# asset packaging to make bourbon work
@@ -21,11 +21,9 @@ end
 
 group :development do
   gem 'better_errors'
-  gem 'sqlite3'
 end
 
 group :production do 
-	gem 'pg'
 	gem 'rails_12factor'
 end
 
