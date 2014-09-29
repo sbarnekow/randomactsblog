@@ -1,17 +1,18 @@
 <div class="container">
-		<% @posts.each do |post| %> 
-		<section class="post-container">
-			<%= link_to(post.title, post)  %>
-			<p>
-			<%= post.text %>
-			<p>
-			<% if current_user && current_user.admin == true %>
-				<%= link_to 'Show', post_path(post) %> | 
-				<%= link_to 'Edit', edit_post_path(post) %> |
-				<%= link_to 'Delete', post_path(post),
-										  method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
-			<% else %>
-			<% end %>
-		</section>
+	<% @posts.each do |post| %> 
+	<section class="post-container">
+		<%= link_to(post.title, post)  %>
+		<p>
+		<%= post.text %>
+		<p>
+		<% if current_user && current_user.admin == true %>
+			<%= link_to 'Show', post_path(post) %> | 
+			<%= link_to 'Edit', edit_post_path(post) %> |
+			<%= link_to 'Delete', post_path(post),
+									  method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
+		<% else %>
 		<% end %>
+		<hr class="post-line">
+	</section>
+	<% end %>
 </div>
