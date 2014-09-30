@@ -19,6 +19,8 @@ group :assets do
 	gem 'neat'
 end
 
+gem 'judge'
+
 group :development do
   gem 'better_errors'
 end
