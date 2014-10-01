@@ -1,15 +1,15 @@
-<%= form_for @user do |f| %>
+<%= form_for(@user, :builder => Judge::FormBuilder) do |f| %>
 	<div>
 		<%=f.label :email %>
-		<%=f.text_field :email %>
+		<%=f.text_field :email, :validate => true %>
 	</div>
 	<div>
 		<%=f.label :password %>
-		<%=f.password_field :password %>
+		<%=f.password_field :password, :validate => true %>
 	</div>
 	<div>
 		<%=f.label :password_confirmation %>
-		<%=f.password_field :password_confirmation %>
+		<%=f.password_field :password_confirmation, :validate => true%>
 	</div>
 
 	<%=f.submit "Sign Up" %>
