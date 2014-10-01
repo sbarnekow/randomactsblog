@@ -1,7 +1,7 @@
 <section class="post-container">
 	<h1>Edit This User</h1>
 
-	<%= form_for @user do |f| %>
+	<%= form_for (@user, :builder => Judge::FormBuilder) do |f| %>
 		
 		<div>
 			<%=f.label :email %>
